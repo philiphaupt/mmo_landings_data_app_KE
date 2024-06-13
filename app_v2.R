@@ -103,7 +103,7 @@ ui <- fluidPage(
       # Input for port of landing
       selectInput("port", "Port of landing", choices = sort(unique(combined_data$`port_of_landing`)), selected = "Whitstable"),
       # Input for species name
-      selectInput("species", "Species name", choices = sort(unique(combined_data$`species_name`)), selected = "Whelks")
+      selectInput("species", "Species name", choices = sort(unique(combined_data$`species_name`)), selected = "Razor Clam")
     ),
     mainPanel(
       # Output plot for landed weight
@@ -157,7 +157,7 @@ server <- function(input, output) {
   
   # Output plot for mean catch weight by year
   output$monthly_mean_catches_by_year <- renderPlot({
-    ggplot(filtered_data(), aes(x = factor(year), y = sum(`landed_weight_tonnes`, na.rm = TRUE))) +
+    ggplot(filtered_data(), aes(x = factor(year), y = (`landed_weight_tonnes`))) +
       geom_bar(stat = "identity", fill = "goldenrod1") +
       xlab("Year") +
       ylab("Total landed weights (tonnes) per year") +
@@ -178,7 +178,7 @@ server <- function(input, output) {
   
   # Output plot for mean value by year
   output$mean_value_by_year <- renderPlot({
-    ggplot(filtered_data(), aes(x = factor(year), y = sum(`Value...000s.`, na.rm = TRUE))) +
+    ggplot(filtered_data(), aes(x = factor(year), y = `Value...000s.`)) +
       geom_bar(stat = "identity", fill = "skyblue") +
       xlab("Year") +
       ylab("Yearly Total Value (£ 000s)") +
