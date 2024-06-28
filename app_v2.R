@@ -1,4 +1,4 @@
-# mmo landings data -for whelks
+# mmo landings data
 
 # Date 2024-01-15
 
