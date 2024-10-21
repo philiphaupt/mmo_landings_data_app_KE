@@ -78,7 +78,7 @@ ports <- combined_data %>%  filter(port_nationality == "UK - England" ,
                                distinct(port_nationality,port_of_landing)
 
 
-ports_kent_and_essex <- ports %>% filter(port_of_landing %in% c("Dover", "Dungeness", "Folkestone", "Hythe", "Leigh-On-Sea", "Margate","Ramsgate", "Sheerness", "Tollesbury", "Walton-On-Naze", "West Mersea", "Whitstable", "Wivenhoe", "Maldon", "Bradwell", "Clacton", "Harwich", "Queenborough", "Brightlingsea", "Rochester", "Faversham", "Isle Of Sheppey", "Herne Bay", "Burnham-On-Crouch", "Pagelsham", "Broadstairs", "	
+ports_kent_and_essex <- ports %>% filter(port_of_landing %in% c("Dover","Deal","Dungeness", "Folkestone", "Hythe", "Leigh-On-Sea", "Margate","Ramsgate", "Sheerness", "Tollesbury", "Walton-On-Naze", "West Mersea", "Whitstable", "Wivenhoe", "Maldon", "Bradwell", "Clacton", "Harwich", "Queenborough", "Brightlingsea", "Rochester", "Faversham", "Isle Of Sheppey", "Herne Bay", "Burnham-On-Crouch", "Pagelsham", "Broadstairs", "	
 Southend-On-Sea"))
 
 landings_dat_k_and_e <- combined_data %>% filter(port_of_landing %in% ports_kent_and_essex$port_of_landing)
